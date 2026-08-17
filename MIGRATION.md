@@ -50,7 +50,7 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 
 - [x] Phase 0 — packaging
 - [x] Phase 1 — OpenRouter client + CLI
-- [ ] Phase 2 — calculator starter
+- [x] Phase 2 — calculator starter
 - [ ] Phase 3 — tools
 - [ ] Phase 4 — schemas + call_function
 - [ ] Phase 5 — agent loop + bugfix demo
@@ -101,10 +101,10 @@ uv run main.py   # argparse exit 2
 
 Replace with lesson paste:
 
-- [ ] `calculator/pkg/render.py` → `format_json_output` (JSON, not ASCII box)
-- [ ] `calculator/main.py` uses that helper; empty-expression message
-- [ ] `calculator/tests.py` includes lesson cases
-- [ ] Keep `+` precedence at `1` (fixed end state, not the broken `04-02` snapshot)
+- [x] `calculator/pkg/render.py` → `format_json_output` (JSON, not ASCII box)
+- [x] `calculator/main.py` uses that helper; empty-expression message
+- [x] `calculator/tests.py` includes lesson cases
+- [x] Keep `+` precedence at `1` (fixed end state, not the broken `04-02` snapshot)
 
 **Verify:**
 
