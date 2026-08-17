@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -38,28 +39,37 @@ def main():
         {"role": "user", "content": args.user_prompt},
     ]
 
-    response = generate_content(client, messages)
-
-    if response.usage is None:
-        raise RuntimeError("No usage data in response")
-
     if args.verbose:
         print(f"User prompt: {args.user_prompt}")
-        print(f"Prompt tokens: {response.usage.prompt_tokens}")
-        print(f"Response tokens: {response.usage.completion_tokens}")
 
-    message = response.choices[0].message
-    if message.tool_calls:
+    for _ in range(20):
+        response = generate_content(client, messages)
+
+        if response.usage is None:
+            raise RuntimeError("No usage data in response")
+
+        if args.verbose:
+            print(f"Prompt tokens: {response.usage.prompt_tokens}")
+            print(f"Response tokens: {response.usage.completion_tokens}")
+
+        message = response.choices[0].message
+        messages.append(message)
+
+        if not message.tool_calls:
+            print("Final response:")
+            print(message.content)
+            return
+
         for tool_call in message.tool_calls:
             result_message = call_function(tool_call, args.verbose)
             if not result_message.get("content"):
                 raise Exception("empty function call result")
             if args.verbose:
                 print(f"-> {result_message['content']}")
-            else:
-                print(result_message["content"])
-    else:
-        print(message.content)
+            messages.append(result_message)
+
+    print("Maximum iterations reached without a final response")
+    sys.exit(1)
 
 
 if __name__ == "__main__":

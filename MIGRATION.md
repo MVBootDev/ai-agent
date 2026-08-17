@@ -53,7 +53,7 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 - [x] Phase 2 — calculator starter
 - [x] Phase 3 — tools
 - [x] Phase 4 — schemas + call_function
-- [ ] Phase 5 — agent loop + bugfix demo
+- [x] Phase 5 — agent loop + bugfix demo
 
 ---
 
@@ -174,8 +174,8 @@ else:
     print max-iterations failure; sys.exit(1)
 ```
 
-- [ ] Order: assistant message, then one tool message per call
-- [ ] Agent can fix calculator if you temporarily break `+` precedence to `3`, then restore
+- [x] Order: assistant message, then one tool message per call
+- [x] Agent can fix calculator if you temporarily break `+` precedence to `3`, then restore
 - [ ] Push repo for `04-03`
 
 **Verify:**
