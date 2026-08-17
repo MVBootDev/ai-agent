@@ -52,7 +52,7 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 - [x] Phase 1 — OpenRouter client + CLI
 - [x] Phase 2 — calculator starter
 - [x] Phase 3 — tools
-- [ ] Phase 4 — schemas + call_function
+- [x] Phase 4 — schemas + call_function
 - [ ] Phase 5 — agent loop + bugfix demo
 
 ---
@@ -145,13 +145,13 @@ Error/success strings must match `lessons/02-*.md` exactly.
 
 ## Phase 4 — wire tools (`03-01`–`03-04`)
 
-- [ ] `prompts.py` — helpful coding-agent system prompt (four operations). Robot prompt is not final.
-- [ ] JSON schemas (`"type": "function"`) per tool; do not expose `working_directory`
-- [ ] `required`: `file_path` / `content` as in `03-03`; `args` is array of strings
-- [ ] `available_functions` list passed as `tools=`
-- [ ] `call_function(tool_call, verbose=False) -> dict` with `role=tool`, `tool_call_id`, `content`
-- [ ] Inject `working_directory="./calculator"`
-- [ ] Print `- Calling function: name` (args if verbose)
+- [x] `prompts.py` — helpful coding-agent system prompt (four operations). Robot prompt is not final.
+- [x] JSON schemas (`"type": "function"`) per tool; do not expose `working_directory`
+- [x] `required`: `file_path` / `content` as in `03-03`; `args` is array of strings
+- [x] `available_functions` list passed as `tools=`
+- [x] `call_function(tool_call, verbose=False) -> dict` with `role=tool`, `tool_call_id`, `content`
+- [x] Inject `working_directory="./calculator"`
+- [x] Print `- Calling function: name` (args if verbose)
 
 **Verify:** prompts that list/read/write/run actually invoke tools.
 
