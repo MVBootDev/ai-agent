@@ -49,7 +49,7 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 ## Status
 
 - [x] Phase 0 — packaging
-- [ ] Phase 1 — OpenRouter client + CLI
+- [x] Phase 1 — OpenRouter client + CLI
 - [ ] Phase 2 — calculator starter
 - [ ] Phase 3 — tools
 - [ ] Phase 4 — schemas + call_function
@@ -74,14 +74,14 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 
 Final `main.py` (no Gemini):
 
-- [ ] `OPENROUTER_API_KEY` from `.env`; `RuntimeError` if missing
-- [ ] `OpenAI(base_url="https://openrouter.ai/api/v1", api_key=...)`
-- [ ] `argparse`: positional `user_prompt`, `--verbose` (`store_true`)
-- [ ] Messages as dicts (`role` / `content`)
-- [ ] `client.chat.completions.create(model="openrouter/free", messages=...)`
-- [ ] Print `response.choices[0].message.content`
-- [ ] Verbose only: `User prompt:`, `Prompt tokens:`, `Response tokens:` from `usage.prompt_tokens` / `usage.completion_tokens`
-- [ ] Raise if `response.usage` is `None`
+- [x] `OPENROUTER_API_KEY` from `.env`; `RuntimeError` if missing
+- [x] `OpenAI(base_url="https://openrouter.ai/api/v1", api_key=...)`
+- [x] `argparse`: positional `user_prompt`, `--verbose` (`store_true`)
+- [x] Messages as dicts (`role` / `content`)
+- [x] `client.chat.completions.create(model="openrouter/free", messages=...)`
+- [x] Print `response.choices[0].message.content`
+- [x] Verbose only: `User prompt:`, `Prompt tokens:`, `Response tokens:` from `usage.prompt_tokens` / `usage.completion_tokens`
+- [x] Raise if `response.usage` is `None`
 
 Note: `01-04` wants tokens always printed. **Final** behavior is `01-07` (verbose only). If `01-04` submit fails, temporarily always-print, then restore verbose-only.
 
