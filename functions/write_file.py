@@ -1,24 +1,22 @@
 import os
-from pathlib import Path
-from functions.utils import is_scoped_path
 
-def write_file(working_directory, file_path, content):
+
+def write_file(working_directory: str, file_path: str, content: str) -> str:
     try:
-        # Validate file_path is in working directory
-        if is_scoped_path(working_directory, file_path):
-            path = os.path.join(working_directory, file_path)
-        else:
-            return f'Error: Cannot read "{file_path}" as it is outside the permitted working directory'
-        
-        # Create parent directories if they don't exist
-        os.makedirs(os.path.dirname(path), exist_ok=True)
+        working_abs = os.path.abspath(working_directory)
+        target = os.path.normpath(os.path.join(working_abs, file_path))
+        if os.path.commonpath([working_abs, target]) != working_abs:
+            return f'Error: Cannot write to "{file_path}" as it is outside the permitted working directory'
+        if os.path.isdir(target):
+            return f'Error: Cannot write to "{file_path}" as it is a directory'
 
-        # Write the content to the file
-        with open(path, "w") as f:
+        parent = os.path.dirname(target)
+        if parent:
+            os.makedirs(parent, exist_ok=True)
+
+        with open(target, "w") as f:
             f.write(content)
-        
+
         return f'Successfully wrote to "{file_path}" ({len(content)} characters written)'
-        
-    
     except Exception as e:
-        return f"Error: {e}"  
+        return f"Error: {e}"

@@ -51,7 +51,7 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 - [x] Phase 0 — packaging
 - [x] Phase 1 — OpenRouter client + CLI
 - [x] Phase 2 — calculator starter
-- [ ] Phase 3 — tools
+- [x] Phase 3 — tools
 - [ ] Phase 4 — schemas + call_function
 - [ ] Phase 5 — agent loop + bugfix demo
 
@@ -130,12 +130,12 @@ ok = commonpath([working_abs, target]) == working_abs
 
 Error/success strings must match `lessons/02-*.md` exactly.
 
-- [ ] `get_files_info(working_directory, directory=".")` + `Result for ...` listing format
-- [ ] `get_file_content` + `config.py` `MAX_CHARS`; truncation via extra `read(1)`
-- [ ] `write_file`: `Cannot write` (not read); reject directories; `makedirs`; success count
-- [ ] `run_python_file(..., args: list[str] | None = None)`; STDOUT/STDERR/exit/`No output produced`
-- [ ] Add `test_get_files_info.py`, `test_get_file_content.py`, `test_write_file.py`, `test_run_python_file.py`
-- [ ] Remove old root `tests.py` / `test_path_validation.py` if unused
+- [x] `get_files_info(working_directory, directory=".")` + `Result for ...` listing format
+- [x] `get_file_content` + `config.py` `MAX_CHARS`; truncation via extra `read(1)`
+- [x] `write_file`: `Cannot write` (not read); reject directories; `makedirs`; success count
+- [x] `run_python_file(..., args: list[str] | None = None)`; STDOUT/STDERR/exit/`No output produced`
+- [x] Add `test_get_files_info.py`, `test_get_file_content.py`, `test_write_file.py`, `test_run_python_file.py`
+- [x] Remove old root `tests.py` / `test_path_validation.py` if unused
 
 **Verify:** `uv run test_get_files_info.py` (and the other three). One success listing + path errors; truncation on `lorem.txt`; `/tmp` write denied; `main.py` with `["3 + 5"]`.
 
