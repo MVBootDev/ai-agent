@@ -48,7 +48,7 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 
 ## Status
 
-- [ ] Phase 0 — packaging
+- [x] Phase 0 — packaging
 - [ ] Phase 1 — OpenRouter client + CLI
 - [ ] Phase 2 — calculator starter
 - [ ] Phase 3 — tools
@@ -59,10 +59,10 @@ Remove: `requirements.txt`, `google-genai`, Gemini types/client, root `tests.py`
 
 ## Phase 0 — packaging (`01-02`)
 
-- [ ] `pyproject.toml` via uv (`openai==2.44.0`, `python-dotenv==1.1.0`)
-- [ ] `uv.lock`
-- [ ] `.gitignore` includes `.venv` and `.env` (not only `venv`)
-- [ ] Delete `requirements.txt` once uv is source of truth
+- [x] `pyproject.toml` via uv (`openai==2.44.0`, `python-dotenv==1.1.0`)
+- [x] `uv.lock`
+- [x] `.gitignore` includes `.venv` and `.env` (not only `venv`)
+- [x] Delete `requirements.txt` once uv is source of truth
 
 **Verify:** `uv run main.py` still starts.
 
